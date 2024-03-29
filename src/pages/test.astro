@@ -4,12 +4,12 @@ import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 
 import svg from "../assets/favicon.svg"
-
-export const prerender = false;
+import Counter from '../components/ReactCounter';
 ---
 
 <Layout title="Welcome to Astro.">
 	<Image src={svg} alt="Image" width={48} height={48} />
+	<Counter client:load />
 	<main>
 		<svg
 			class="astro-a"
