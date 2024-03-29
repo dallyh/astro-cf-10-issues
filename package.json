@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "wrangler pages dev ./dist --compatibility-flags='nodejs_compat' --live-reload --port 4321",
+    "build-and-preview": "astro build && npm run preview",
     "astro": "astro"
   },
   "dependencies": {

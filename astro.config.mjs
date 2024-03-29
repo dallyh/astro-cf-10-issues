@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 export default defineConfig({
     output: "hybrid",
     adapter: cloudflare({
-        imageService: "passthrough",
+        imageService: "compile",
         platformProxy: {
             enabled: true,
         },
