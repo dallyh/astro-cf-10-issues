@@ -4,11 +4,17 @@ import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 import svg from "../assets/favicon.svg"
 import { Code } from 'astro:components';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry("collection", "test-collection-entry");
+const { Content } = await entry.render();
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<Image src={svg} alt="Image" width={48} height={48} />
 	<Code lang="javascript" code='function test(){};' />
+	<Content />
 	<main>
 		<svg
 			class="astro-a"
