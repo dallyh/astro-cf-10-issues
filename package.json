@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "wrangler pages dev ./dist --compatibility-flags='nodejs_compat' --live-reload --port 4321",
     "astro": "astro",
-    "build-and-preview": "astro build && npm run preview"
+    "build-and-preview": "astro build && npm run preview",
+    "bundle-worker": "npx wrangler deploy ./dist/_worker.js --dry-run --outdir ./dist/build --compatibility-date 2024-03-31",
+    "build-cf": "pnpm run astro build && pnpm run bundle-worker && rm -rf ./dist/_worker.js && mv ./dist/build/_worker.js ./dist && rm -rf ./dist/build"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
