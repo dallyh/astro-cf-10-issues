@@ -11,6 +11,9 @@ export default defineConfig({
         platformProxy: {
             enabled: true,
         },
+        experimental: {
+            manualChunks: ["sharp"]
+        }
     }),
     integrations: [react()],
 });
