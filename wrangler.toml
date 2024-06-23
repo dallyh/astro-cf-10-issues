@@ -1,1 +1,2 @@
 name = "issues"
+node_compat = true
